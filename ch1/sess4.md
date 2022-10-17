@@ -71,3 +71,9 @@
   - media packetization delay in VoIP(Voice over IP) applications: the sending side must first fill a packet with encoded digitized speech before passing the packet to the Internet
 
 ## 4. Throughput in Computer Networks
+- **instantaneous throughput** at any instant of time is the rate (in bits/sec) at which the receiving host is getting the data
+
+- example: N-link network with transmission rates `R_{i}` => `F / min{R_{i}}` bits/sec(**bottleneck link**)
+  - typically in these days, the constraining factor for throughput in today's Internet is typically the access network
+
+- example2: shared link in the core(intervening traffic) => divide the transmission rates 
