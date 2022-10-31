@@ -51,23 +51,56 @@
   - 2)=> **port number**: since a host could be running many network applications
 
 ## 3. Transport Services Available to Applications
+- many networks provide more than one transport-layer protocol
+- when you develop an application, you must choose one of the available transport-layer protocols
+- four dimensions of protocol services
 
 ### Reliable Data Transfer
+- guaranteeing that the data sent by one end of the application is delivered correctly and completely to the other end of the application
+- that protocol provides **reliable data transfer**
+- the sending process can trust the protocol
+- opposite: **loss-tolerant** applications
 
 ### Throughput
+- the available throughput can fluctuate over time: we need guaranteed available throughput at some specified rate
+- **bandwidth-sensitive** applications
+- opposite: **elastic** applications can make use of as much or as little throughput as happen to be possible
 
 ### Timing
+- sent packets must arrive at the receiver's socket on time: important for interactive real-time applications
 
 ### Security
+- a protocol can encrypt/decrypt data
 
 ## 4. Transport Services Provided by the Internet
+- the Internet(and TCP/IP networks) provides two protocols: TCP, UDP
 
 ### TCP Services
+- connection oriented
+  - **handshaking procedure**: TCP has the client and server exchange transport layer control information, before the application-level messages begin to flow
+  - this alerts the client and server to be prepared for exchanging packets
+  - **TCP connection** btw the sockets: this simply means that we have completed a handshaking procedure 
+  - **full-duplex**: the two processes can send messages to each other over the connection at the same time
+  - when the application finishes sending messages, it must tear down the connection
+
+- reliable data transfer service
+  - no missing or duplicated bytes
+  - congestion-control mechanism: throttles a sending process when the network is congested btw sender and receiver
 
 ### UDP Services
+- lightweight, minimal services
+- connectionless: no handshaking, unreliable data transfer service, no congestion control
 
 ### Services Not Provided by Internet Transport Protocols
+- today's Internet can *often* provide satisfactory service to time sensitive applications, but it cannot provide any *timing or throughput guarantees*
 
 ## 5. Application-Layer Protocols
+- **application-layer protocols**: defines how an application's processes pass messages to each other
+  - the types of messages exchanged
+  - the syntax of the various message types
+  - the semantics of the fields
+  - rules for determining when and how a process sends messages and responds to messages
+
+- an application-layer protocol is only one piece of a network application 
 
 ## 6. Network Applications Covered in This Book
